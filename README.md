@@ -106,6 +106,8 @@ Reffer this doc:- https://cloud.google.com/load-balancing/docs/internal
 - <b>Network tags</b>	http-server
 - <b>Network</b>	default
 - <b>Subnetwork</b>	default (us-east1)
+![image](https://user-images.githubusercontent.com/63963025/170873411-0812040f-53b3-4bfb-b0d9-747574bed22e.png)
+
 ![image](https://user-images.githubusercontent.com/63963025/170856895-522ebaa9-e9e8-4b03-9d15-7cd9ea77b270.png)
 
 - Now copy the template and only change  network---> Subnetwork--> default (europe-west1) --> create 
@@ -149,8 +151,76 @@ Reffer this doc:- https://cloud.google.com/load-balancing/docs/internal
 ![image](https://user-images.githubusercontent.com/63963025/170857376-5bef16dd-d444-4b4e-880e-834fcfd1e467.png)
 ![image](https://user-images.githubusercontent.com/63963025/170857389-0da57b40-5426-43bd-a9dc-f0e4042402ca.png)
 ![image](https://user-images.githubusercontent.com/63963025/170857410-3ce0cc3d-aa61-4def-a861-0249cc24944b.png)
+![image](https://user-images.githubusercontent.com/63963025/170873729-9928680b-b002-4cf5-94e1-d4955a45bba5.png)
+
+- Now check to Virtual machine access public ip of both vm you will see output of that page 
+![image](https://user-images.githubusercontent.com/63963025/170873737-1bad5473-4b1a-41e7-93c1-e6ca5ec82e87.png)
+
+![image](https://user-images.githubusercontent.com/63963025/170873717-b18e33d1-4e6a-4b66-b602-7bfc4bd9e8a1.png)
 
 
+## Step3 Configure the HTTP Load Balancer
+- Go to Navigation menu--> Network services-->Load balancing--> Create a load balancer --> HTTP(S) Load Balancing--> Start configuration
+![image](https://user-images.githubusercontent.com/63963025/170873786-f90579db-e326-499e-8f33-4c7c58d6f722.png)
+- select HTTPs Loadbalancing  
+![image](https://user-images.githubusercontent.com/63963025/170873859-4c8d409a-43b8-4f93-9f9c-bf283a7340f2.png)\
+- Internet facing or only select <b>From Internet to my VMs or serverless services</b>
+![image](https://user-images.githubusercontent.com/63963025/170873986-64bbfa08-9618-4abe-9079-b1c5099ff27b.png)
+- Backend configuration.
+- For Backend services & backend buckets, click Create a backend service.
+- <b>Name</b>	http-backend
+- <b>Instance</b> group	us-east1-mig
+- <b>Port numbers</b>	80
+- <b>Balancing mode</b>	Rate
+- <b>Maximum RPS</b>	50
+- <b>Capacity</b>	100
+![image](https://user-images.githubusercontent.com/63963025/170874151-996b8bca-093a-450e-b6c5-89440483507b.png)
+![image](https://user-images.githubusercontent.com/63963025/170874189-eabbc48d-dad2-4630-bd61-1805f086b703.png)
+
+
+- Done --> Add backend
+- Instance group	europe-west1-mig
+- Port numbers	80
+- Balancing mode	Utilization
+- Maximum backend utilization	80
+- Capacity	100
+![image](https://user-images.githubusercontent.com/63963025/170874231-02c65573-1389-4399-a620-3298d207b0f4.png)
+
+- Create Health Check 
+![image](https://user-images.githubusercontent.com/63963025/170874270-d3f22b4d-8cca-4241-8df0-11e9018a3204.png)
+![image](https://user-images.githubusercontent.com/63963025/170874288-1c2e6b66-afd7-4b96-88b2-b2fc65067e0f.png)
+ 
+- Create 
+
+Name	http-health-check
+Protocol	TCP
+Port	80
+
+- Frontend configuration
+Protocol	HTTP
+IP version	IPv4
+IP address	Ephemeral
+Port	80
+![image](https://user-images.githubusercontent.com/63963025/170874403-c6923b29-0703-4bd5-a113-088c509cfe5c.png)
+![image](https://user-images.githubusercontent.com/63963025/170874425-d528fb5c-0fbf-4c2d-b91d-a3b7bd5c9110.png)
+
+- Review and create 
+![image](https://user-images.githubusercontent.com/63963025/170874444-09fb8198-d7bd-4d17-977b-e82bb4c0c962.png)
+
+- Your Load balancer created successfully 
+![image](https://user-images.githubusercontent.com/63963025/170874550-5bb57494-1369-442e-b52b-5f0faf520b58.png)
+
+- This will take some time to setup loadbalancer in backend 
+![image](https://user-images.githubusercontent.com/63963025/170874587-9e21601a-b48c-47f5-9913-a2fcea800d11.png)
+
+- Copy this loadbalancer ip and check the webpage 
+![image](https://user-images.githubusercontent.com/63963025/170874646-fafb6c15-4d43-47a8-adb0-7df792c5dd4e.png)
+![Hnet com-image](https://user-images.githubusercontent.com/63963025/170875097-01de2dbf-7b51-4195-ae15-65142948aee0.gif)
+
+- Now search for <b>whats my ip</b>
+![image](https://user-images.githubusercontent.com/63963025/170875193-1a3f5d46-acba-484d-9223-a5e6a9163f06.png)
+- Now go for Navigation menu--> Network Security--> Cloud Armor
+![image](https://user-images.githubusercontent.com/63963025/170875294-d49df5f7-376e-4e2e-8a97-3daeccb6e3d3.png)
 
 
 
