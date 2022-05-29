@@ -122,15 +122,15 @@ Reffer this doc:- https://cloud.google.com/load-balancing/docs/internal
 - Create Instance groups
 ![image](https://user-images.githubusercontent.com/63963025/170857234-e91264fc-bbf9-4155-b788-b8669dfe283a.png)
 
-- Name	us-east1-mig
-- Location	Multiple zones
-- Region	us-east1
-- Instance template	us-east1-template
-- Autoscaling > Autoscaling metrics > Click dropdown > Metric type	CPU utilization
-- Target CPU utilization	80, click Done.
-- Cool-down period	45
-- Minimum number of instances	1
-- Maximum number of instances	5
+- <b>Name</b>	us-east1-mig
+- <b>Location</b>	Multiple zones
+- <b>Region</b>	us-east1
+- <b>Instance template</b>	us-east1-template
+- <b>Autoscaling </b> Autoscaling metrics > Click dropdown > Metric type	CPU utilization
+- <b>Target CPU utilization</b>	80, click Done.
+- <b>Cool-down period</b>	45
+- <b>Minimum number of instances</b>	1
+- <b>Maximum number of instances</b>	5
 
 ![image](https://user-images.githubusercontent.com/63963025/170857258-4f813b6b-610e-41fb-9ea4-bea6a9a82e89.png)
 ![image](https://user-images.githubusercontent.com/63963025/170857278-8499cdce-9a34-44ae-9843-2ff124e0e8d0.png)
