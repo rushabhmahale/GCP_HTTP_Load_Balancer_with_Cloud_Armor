@@ -137,15 +137,15 @@ Reffer this doc:- https://cloud.google.com/load-balancing/docs/internal
 ![image](https://user-images.githubusercontent.com/63963025/170857297-42a2eef0-88ac-4a4f-8d5e-58cb6aad8936.png)
 
 - Create another MIG(Manage instance Group)
-- Name	europe-west1-mig
-- Location	Multiple zones
-- Region	europe-west1
-- Instance template	europe-west1-template
-- Autoscaling > Autoscaling metrics > Click dropdown > Metric type	CPU utilization
-- Target CPU utilization	80, click Done.
-- Cool-down period	45 
-- Minimum number of instances	1
-- Maximum number of instances	5
+- <b>Name</b>	europe-west1-mig
+- <b>Location</b>	Multiple zones
+- <b>Region</b>	europe-west1
+- <b>Instance template</b>	europe-west1-template
+- <b>Autoscaling</b> Autoscaling metrics > Click dropdown > Metric type	CPU utilization
+- <b>Target CPU utilization</b>	80, click Done.
+- <b>Cool-down period</b>	45 
+- <b>Minimum number of instances</b>	1
+- <b>Maximum number of instances</b>	5
 ![image](https://user-images.githubusercontent.com/63963025/170857376-5bef16dd-d444-4b4e-880e-834fcfd1e467.png)
 ![image](https://user-images.githubusercontent.com/63963025/170857389-0da57b40-5426-43bd-a9dc-f0e4042402ca.png)
 ![image](https://user-images.githubusercontent.com/63963025/170857410-3ce0cc3d-aa61-4def-a861-0249cc24944b.png)
