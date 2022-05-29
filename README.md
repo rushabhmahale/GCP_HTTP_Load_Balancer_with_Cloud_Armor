@@ -120,7 +120,36 @@ Reffer this doc:- https://cloud.google.com/load-balancing/docs/internal
 - Navigation Menu--> Compute Engine--> Instance grooups
 ![image](https://user-images.githubusercontent.com/63963025/170857103-70f851cc-9a9a-4067-909c-f7d709f966b1.png)
 - Create Instance groups
-![image](https://user-images.githubusercontent.com/63963025/170857218-7e4c3005-2994-49b6-a9e0-f1fd875a86c7.png)
+![image](https://user-images.githubusercontent.com/63963025/170857234-e91264fc-bbf9-4155-b788-b8669dfe283a.png)
+
+- Name	us-east1-mig
+- Location	Multiple zones
+- Region	us-east1
+- Instance template	us-east1-template
+- Autoscaling > Autoscaling metrics > Click dropdown > Metric type	CPU utilization
+- Target CPU utilization	80, click Done.
+- Cool-down period	45
+- Minimum number of instances	1
+- Maximum number of instances	5
+
+![image](https://user-images.githubusercontent.com/63963025/170857258-4f813b6b-610e-41fb-9ea4-bea6a9a82e89.png)
+![image](https://user-images.githubusercontent.com/63963025/170857278-8499cdce-9a34-44ae-9843-2ff124e0e8d0.png)
+![image](https://user-images.githubusercontent.com/63963025/170857297-42a2eef0-88ac-4a4f-8d5e-58cb6aad8936.png)
+
+- Create another MIG(Manage instance Group)
+- Name	europe-west1-mig
+- Location	Multiple zones
+- Region	europe-west1
+- Instance template	europe-west1-template
+- Autoscaling > Autoscaling metrics > Click dropdown > Metric type	CPU utilization
+- Target CPU utilization	80, click Done.
+- Cool-down period	45 
+- Minimum number of instances	1
+- Maximum number of instances	5
+![image](https://user-images.githubusercontent.com/63963025/170857376-5bef16dd-d444-4b4e-880e-834fcfd1e467.png)
+![image](https://user-images.githubusercontent.com/63963025/170857389-0da57b40-5426-43bd-a9dc-f0e4042402ca.png)
+![image](https://user-images.githubusercontent.com/63963025/170857410-3ce0cc3d-aa61-4def-a861-0249cc24944b.png)
+
 
 
 
