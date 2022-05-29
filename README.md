@@ -222,6 +222,14 @@ Port	80
 - Now go for Navigation menu--> Network Security--> Cloud Armor
 ![image](https://user-images.githubusercontent.com/63963025/170875294-d49df5f7-376e-4e2e-8a97-3daeccb6e3d3.png)
 
+- Create Policy 
+![image](https://user-images.githubusercontent.com/63963025/170875408-f1a16438-9c56-4c96-a843-3a1cd3c021e6.png)
+![image](https://user-images.githubusercontent.com/63963025/170875512-c5cf4517-92ab-48d9-8a00-a8c24caac184.png)
 
+- All Default Create 
+![image](https://user-images.githubusercontent.com/63963025/170875486-ad3bbc21-de39-4ec3-88a5-57a22b424984.png)
+
+- We have whitelisted 1 ip 103.81.240.70 this will take some to configure in backend
+![image](https://user-images.githubusercontent.com/63963025/170875602-f4ac783b-bc02-47c4-b60d-4e634227d3d5.png)
 
 
