@@ -1,5 +1,6 @@
 # GCP_HTTP_Load_Balancer_with_Cloud_Armor
 
+## Also you can refer [AWS-application-load-balancer-with-WAF](https://github.com/rushabhmahale/AWS-application-load-balancer-with-WAF)
 ## Why loadbalacer is necessary
 Elastic Load Balancing automatically distributes your incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses, in one or more Availability Zones. It monitors the health of its registered targets, and routes traffic only to the healthy targets. Elastic Load Balancing scales your load balancer as your incoming traffic changes over time. It can automatically scale to the vast majority of workloads.
 
@@ -49,4 +50,79 @@ Reffer this doc:- https://cloud.google.com/load-balancing/docs/network
 Internal TCP/UDP Load Balancing distributes traffic among internal virtual machine (VM) instances in the same region in a Virtual Private Cloud (VPC) network. It enables you to run and scale your services behind an internal IP address that is accessible only to systems in the same VPC network or systems connected to your VPC network.
 
 Reffer this doc:- https://cloud.google.com/load-balancing/docs/internal
+
+# Steps to be followed :- 
+## Step1 Configure Firewallrule for Loadbalancer 
+- This is GCP Console  
+![image](https://user-images.githubusercontent.com/63963025/170855956-f61e70e8-f1ed-4a25-93ea-84c4e1f36be2.png)
+- In Left hand side there is Nevigation menu 
+ ![image](https://user-images.githubusercontent.com/63963025/170855999-72a03d28-5df2-4c7a-a1bf-38ddd6aa356f.png)
+- Go to VPC--> Firewall
+![image](https://user-images.githubusercontent.com/63963025/170856085-b82f9ed5-08ef-4ca7-822e-abefb217a23a.png)
+- Create Firewall Rule.
+![image](https://user-images.githubusercontent.com/63963025/170856310-a4e4bf42-40bc-4032-979f-9598c21b9283.png)
+
+- <b>Name</b>	http-traffic
+- <b>Network</b>	default
+- <b>Targets</b>	Specified target tags
+- <b>Target tags</b>	http-server
+- <b>Source filter</b>	IPv4 Ranges
+- <b>Source IPv4 ranges</b>	0.0.0.0/0
+- <b>Protocols and ports</b>	Specified protocols and ports, and then check tcp, type: 80
+![image](https://user-images.githubusercontent.com/63963025/170856353-297dd930-9071-4031-a71d-2d22393e69af.png)
+![image](https://user-images.githubusercontent.com/63963025/170856366-0827fc9f-3d20-45c6-b98f-2cbdbab55d37.png)
+
+- Now Create another <b>Firewall Rule</b> 
+- With this Configuration
+- <b>Name</b>	healthcheck-lb
+- <b>Network</b>	default
+- <b>Targets</b>	Specified target tags
+- <b>Target tags</b>	http-server
+- <b>Source filter</b>	IPv4 Ranges
+- <b>Source IPv4 ranges</b>	130.211.0.0/22, 35.191.0.0/16
+- <b>Protocols and ports</b>	Specified protocols and ports, and then check tcp
+
+![image](https://user-images.githubusercontent.com/63963025/170856475-2d3274e5-4b51-46b2-8333-475de8f44ff7.png)
+
+## Step2 Configure instance templates and create instance groups
+- Go to Naviagtion menu --> Compute Engine --> Instance templates  
+![image](https://user-images.githubusercontent.com/63963025/170856545-7e379d61-bb88-4c85-87e8-d2f2e983822a.png)
+
+- Create instance template
+![image](https://user-images.githubusercontent.com/63963025/170856630-d000626e-da9c-4a29-b3d5-3f9d45ff10f1.png)
+
+- Name, type us-east1-template.
+- For Series, select N1.
+- Click NETWORKING, DISKS, SECURITY, MANAGEMENT, SOLE-TENANCY. 
+![image](https://user-images.githubusercontent.com/63963025/170856733-dc9c88be-8755-4d16-b14a-5fe3588b89d6.png)
+- Click the Management tab
+- Add metadata 
+- <b>Key</b> startup-script-url
+- <b>Value</b> gs://cloud-training/gcpnet/httplb/startup.sh
+
+![image](https://user-images.githubusercontent.com/63963025/170856762-8158a719-0a67-41be-b95a-c189bbe5374d.png)
+
+- Networking
+- <b>Network tags</b>	http-server
+- <b>Network</b>	default
+- <b>Subnetwork</b>	default (us-east1)
+![image](https://user-images.githubusercontent.com/63963025/170856895-522ebaa9-e9e8-4b03-9d15-7cd9ea77b270.png)
+
+- Now copy the template and only change  network---> Subnetwork--> default (europe-west1) --> create 
+ ![image](https://user-images.githubusercontent.com/63963025/170856959-e6f08959-9b7d-468c-af15-7edafe7d9cd2.png)
+
+- <b>Name</b>europe-west1-template.
+![image](https://user-images.githubusercontent.com/63963025/170857043-25435420-1a2d-486c-bb99-9bbb64f2b331.png)
+
+![image](https://user-images.githubusercontent.com/63963025/170857054-71d8be96-a578-485f-aa4e-ef0ce47978da.png)
+
+## Lets Create the managed instance groups
+- Navigation Menu--> Compute Engine--> Instance grooups
+![image](https://user-images.githubusercontent.com/63963025/170857103-70f851cc-9a9a-4067-909c-f7d709f966b1.png)
+- Create Instance groups
+![image](https://user-images.githubusercontent.com/63963025/170857218-7e4c3005-2994-49b6-a9e0-f1fd875a86c7.png)
+
+
+
+
 
