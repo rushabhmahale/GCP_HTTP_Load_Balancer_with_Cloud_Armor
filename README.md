@@ -215,6 +215,7 @@ Port	80
 
 - Copy this loadbalancer ip and check the webpage 
 ![image](https://user-images.githubusercontent.com/63963025/170874646-fafb6c15-4d43-47a8-adb0-7df792c5dd4e.png)
+![ezgif com-gif-maker (8)](https://user-images.githubusercontent.com/63963025/171011735-1efa447c-3c42-4151-8b86-995daf229275.gif)
 
 
 - Now search for <b>whats my ip</b>
@@ -244,6 +245,7 @@ Port	80
 
 ![image](https://user-images.githubusercontent.com/63963025/170942258-3fb2ed95-de63-4331-a21e-961433dc8bed.png)
 ![image](https://user-images.githubusercontent.com/63963025/170942286-c580f4eb-23b5-4f22-b8d5-bf687aff31f4.png)
+![ezgif com-gif-maker (10)](https://user-images.githubusercontent.com/63963025/171012049-94157705-d70f-4977-98b9-80de723aef4d.gif)
 
 
 
