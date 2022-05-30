@@ -225,13 +225,18 @@ Port	80
 - Create Policy be sure to use <b>/32</b>
 ![image](https://user-images.githubusercontent.com/63963025/170875807-00f2b42f-0aaa-469e-819e-fa6b8d5fbdc8.png)
 
-![image](https://user-images.githubusercontent.com/63963025/170875512-c5cf4517-92ab-48d9-8a00-a8c24caac184.png)
+- Add Target --> Load balancer backend service--> http-backend
+![image](https://user-images.githubusercontent.com/63963025/170938930-cade7bba-7f20-40c4-a7a3-c01916e9d312.png)
 
 - All Default Create 
+
 ![image](https://user-images.githubusercontent.com/63963025/170875486-ad3bbc21-de39-4ec3-88a5-57a22b424984.png)
 
 - We have whitelisted 1 ip 103.81.240.70/32 this will take some to configure in backend
 ![image](https://user-images.githubusercontent.com/63963025/170875717-1f232db6-76d4-41bb-b0dd-3e88aa723e05.png)
+
+
+
 
 
 
