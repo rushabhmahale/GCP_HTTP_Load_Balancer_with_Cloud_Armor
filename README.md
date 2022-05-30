@@ -6,10 +6,11 @@ Elastic Load Balancing automatically distributes your incoming traffic across mu
 
 Reffer this doc:- https://docs.nginx.com/nginx/admin-guide/load-balancer/http-load-balancer/
 ![lb for gcp](https://user-images.githubusercontent.com/63963025/170854578-d6f78da3-031d-4a98-9118-6fc386ae3b90.gif)
-## Architecture diagram 1: 
+## Architecture diagram: 
 ![clouad armor loadbalancer drawio](https://user-images.githubusercontent.com/63963025/171035762-d4fd54c1-43c0-45cb-89ba-13046717d326.png)
 
-## Architecture diagram 2:
+## Block diagram:
+![Untitled Diagram drawio (1)](https://user-images.githubusercontent.com/63963025/171038389-abebd4a6-a226-4652-a98c-556bfba8a9a9.png)
 
 
 ## Types of loadbalancer in GCP
