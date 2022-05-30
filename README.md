@@ -215,7 +215,6 @@ Port	80
 
 - Copy this loadbalancer ip and check the webpage 
 ![image](https://user-images.githubusercontent.com/63963025/170874646-fafb6c15-4d43-47a8-adb0-7df792c5dd4e.png)
-![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/63963025/170941636-eff6a78f-41c6-4195-a6d9-b100ea2de99f.gif)
 
 
 - Now search for <b>whats my ip</b>
@@ -235,7 +234,8 @@ Port	80
 
 - We have whitelisted 1 ip 103.81.240.70/32 this will take some to configure in backend
 ![image](https://user-images.githubusercontent.com/63963025/170875717-1f232db6-76d4-41bb-b0dd-3e88aa723e05.png)
-![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/63963025/170941959-d6240915-dc20-4d70-9310-b7623e661882.gif)
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/63963025/170948331-5f85758d-56c5-4670-98c0-2515aabd05e0.gif)
+
 
 
 - Lets use VPN to esatablish connection with other ip  
@@ -244,7 +244,6 @@ Port	80
 
 ![image](https://user-images.githubusercontent.com/63963025/170942258-3fb2ed95-de63-4331-a21e-961433dc8bed.png)
 ![image](https://user-images.githubusercontent.com/63963025/170942286-c580f4eb-23b5-4f22-b8d5-bf687aff31f4.png)
-![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/63963025/170943287-ad94d11f-58ae-4c60-8ff7-31906db6dfc9.gif)
 
 
 
