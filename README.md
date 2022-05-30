@@ -10,7 +10,7 @@ Reffer this doc:- https://docs.nginx.com/nginx/admin-guide/load-balancer/http-lo
 ![clouad armor loadbalancer drawio](https://user-images.githubusercontent.com/63963025/171035762-d4fd54c1-43c0-45cb-89ba-13046717d326.png)
 
 ## Architecture diagram 2:
-![template MIG drawio](https://user-images.githubusercontent.com/63963025/171035771-c3292539-962d-4eb6-88c9-2a1403c50cca.png)
+
 
 ## Types of loadbalancer in GCP
 - Global external HTTP(S) load balancer
